@@ -1,0 +1,129 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:TransferMarketApp.ViewModels.Converters">
+
+    <SolidColorBrush Color="#7FFF5100" x:Key="colorOrangeTheme"/>
+    <SolidColorBrush Color="#CCFF5100" x:Key="colorHoverOrangeTheme"/>
+    <SolidColorBrush Color="#CC60DEFA" x:Key="colorBlueTheme"/>
+    <SolidColorBrush Color="#FF25A3E0" x:Key="colorHoverBlueTheme"/>
+    <SolidColorBrush Color="#FFC5C5C5" x:Key="colorDefaultTheme"/>
+    <SolidColorBrush Color="Gray" x:Key="colorHoverDefaultTheme"/>
+
+    <Style TargetType="{x:Type Button}"
+           x:Key="MainButtonTheme">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+        <Setter Property="TextElement.FontFamily" Value="/View/Fonts/#Dosis"/>
+        <Setter Property="Background" Value="#7FFF5100"/>
+        <Setter Property="Cursor" Value="Hand"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                            CornerRadius="12"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="OrangeButtonTheme"
+           TargetType="Button"
+           BasedOn="{StaticResource MainButtonTheme}">
+        <Setter Property="Background" Value="{StaticResource colorOrangeTheme}"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource colorHoverOrangeTheme}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="BlueButtonTheme" 
+           TargetType="Button"
+           BasedOn="{StaticResource MainButtonTheme}">
+        <Setter Property="Background" Value="{StaticResource colorBlueTheme}"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource colorHoverBlueTheme}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TabButtonTheme" 
+           TargetType="Button"
+           BasedOn="{StaticResource BlueButtonTheme}">
+        <Style.Resources>
+            <converters:MultiValueEqualityConverter x:Key="multiValueEqualityConverter"/>
+        </Style.Resources>
+        <Setter Property="Visibility" Value="Visible"/>
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Value="True">
+                        <Condition.Binding>
+                            <MultiBinding Converter="{StaticResource multiValueEqualityConverter}">
+                                <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Page}" Path="DataContext.PlayerPersonalTab.Name"/>
+                                <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Page}" Path="DataContext.PlayerPersonalTab.selectedPlayerItem.Name"/>
+                            </MultiBinding>
+                        </Condition.Binding>
+                    </Condition>
+                    <Condition Value="True">
+                        <Condition.Binding>
+                            <MultiBinding Converter="{StaticResource multiValueEqualityConverter}">
+                                <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Page}" Path="DataContext.PlayerPersonalTab.Nationality"/>
+                                <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Page}" Path="DataContext.PlayerPersonalTab.selectedPlayerItem.Nationality"/>
+                            </MultiBinding>
+                        </Condition.Binding>
+                    </Condition>
+                    <Condition Value="True">
+                        <Condition.Binding>
+                            <MultiBinding Converter="{StaticResource multiValueEqualityConverter}">
+                                <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Page}" Path="DataContext.PlayerPersonalTab.Age"/>
+                                <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Page}" Path="DataContext.PlayerPersonalTab.selectedPlayerItem.Age"/>
+                            </MultiBinding>
+                        </Condition.Binding>
+                    </Condition>
+                    <Condition Value="True">
+                        <Condition.Binding>
+                            <MultiBinding Converter="{StaticResource multiValueEqualityConverter}">
+                                <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Page}" Path="DataContext.PlayerPersonalTab.Club"/>
+                                <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Page}" Path="DataContext.PlayerPersonalTab.selectedPlayerItem.Club"/>
+                            </MultiBinding>
+                        </Condition.Binding>
+                    </Condition>
+                    <Condition Value="True">
+                        <Condition.Binding>
+                            <MultiBinding Converter="{StaticResource multiValueEqualityConverter}">
+                                <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Page}" Path="DataContext.PlayerPersonalTab.PlayerStatus"/>
+                                <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Page}" Path="DataContext.PlayerPersonalTab.selectedPlayerItem.PlayerStatus"/>
+                            </MultiBinding>
+                        </Condition.Binding>
+                    </Condition>
+                    <Condition Value="True">
+                        <Condition.Binding>
+                            <MultiBinding Converter="{StaticResource multiValueEqualityConverter}">
+                                <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Page}" Path="DataContext.PlayerPersonalTab.Position"/>
+                                <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Page}" Path="DataContext.PlayerPersonalTab.selectedPlayerItem.Position"/>
+                            </MultiBinding>
+                        </Condition.Binding>
+                    </Condition>
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Visibility" Value="Hidden"/>
+            </MultiDataTrigger>
+            <DataTrigger Value="{x:Null}">
+                <DataTrigger.Binding>
+                    <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Page}" Path="DataContext.PlayerPersonalTab.selectedPlayerItem"/>
+                </DataTrigger.Binding>
+                <Setter Property="Visibility" Value="Hidden"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

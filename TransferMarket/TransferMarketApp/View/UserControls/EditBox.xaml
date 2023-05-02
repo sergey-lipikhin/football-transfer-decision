@@ -1,0 +1,146 @@
+﻿<UserControl x:Class="TransferMarketApp.View.UserControls.EditBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TransferMarketApp.View.UserControls"
+             mc:Ignorable="d" 
+             x:Name="editBox"
+             d:DesignHeight="100" d:DesignWidth="200">
+
+    <UserControl.Resources>
+        <Style x:Key="ucBorderTheme"
+               TargetType="{x:Type Border}">
+            <Setter Property="Background" Value="#FFBEDEF9"/>
+            <Setter Property="BorderBrush" Value="#FF93CEFF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="15"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=(Validation.HasError), ElementName=EditTextBox}" Value="True">
+                    <Setter Property="Background" Value="#FFFFA3A3"/>
+                    <Setter Property="Opacity" Value=".75"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ucChildTextBoxTheme"
+               TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="/View/Fonts/#Dosis"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="IsReadOnly" Value="{Binding DataContext.IsReadOnly, ElementName=editBox}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding PropertyName, ElementName=editBox}" Value="Name">
+                    <Setter Property="Text" Value="{Binding DataContext.Name, ElementName=editBox,
+                        UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True, ValidatesOnDataErrors=True}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding PropertyName, ElementName=editBox}" Value="Age">
+                    <Setter Property="Text" Value="{Binding DataContext.Age, ElementName=editBox,
+                        UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True, ValidatesOnDataErrors=True}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding PropertyName, ElementName=editBox}" Value="Nationality">
+                    <Setter Property="Text" Value="{Binding DataContext.Nationality, ElementName=editBox,
+                        UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True, ValidatesOnDataErrors=True}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding PropertyName, ElementName=editBox}" Value="Login">
+                    <Setter Property="Text" Value="{Binding DataContext.Login, ElementName=editBox,
+                        UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True, ValidatesOnDataErrors=True}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding PropertyName, ElementName=editBox}" Value="Password">
+                    <Setter Property="Text" Value="{Binding DataContext.Password, ElementName=editBox,
+                        UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True, ValidatesOnDataErrors=True}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ucEnterTheme"
+               TargetType="{x:Type TextBlock}">
+            <Setter Property="IsHitTestVisible" Value="False"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Foreground" Value="#FF6F7881"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Visibility" Value="Hidden"/>
+            <Setter Property="Text" Value="Enter something"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Text, ElementName=EditTextBox}" Value="">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding PropertyName, ElementName=editBox}" Value="Name">
+                    <Setter Property="Text" Value="Enter name"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding PropertyName, ElementName=editBox}" Value="Age">
+                    <Setter Property="Text" Value="Enter age"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding PropertyName, ElementName=editBox}" Value="Nationality">
+                    <Setter Property="Text" Value="Enter nationality"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding PropertyName, ElementName=editBox}" Value="Login">
+                    <Setter Property="Text" Value="Enter login"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding PropertyName, ElementName=editBox}" Value="Password">
+                    <Setter Property="Text" Value="Enter password"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ucErrorTheme"
+               TargetType="TextBlock">
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Foreground" Value="#FFFF6969"/>
+            <Setter Property="Text">
+                <Setter.Value>
+                    <Binding Path="(Validation.Errors)[0].ErrorContent" ElementName="EditTextBox"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=(Validation.HasError), ElementName=EditTextBox}" Value="True">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="TextBox"
+               x:Key="ucMainTheme">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0"
+                                    Style="{StaticResource ucBorderTheme}">
+                                <Grid>
+                                    <TextBox Style="{StaticResource ucChildTextBoxTheme}"
+                                             Validation.ErrorTemplate="{x:Null}"
+                                             Name="EditTextBox"/>
+                                    <TextBlock Style="{StaticResource ucEnterTheme}">
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+                            <TextBlock Grid.Row="1"
+                                       Style="{StaticResource ucErrorTheme}">
+                            </TextBlock>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <TextBox Style="{StaticResource ucMainTheme}"/>
+    </Grid>
+    
+</UserControl>

@@ -1,0 +1,143 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+           TargetType="RadioButton"
+           x:Key="ParamsButtonTheme">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Background="{TemplateBinding Background}">
+
+                            <TextBlock Text="{TemplateBinding Property=Content}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Padding="0,5,0,5"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="#515151"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="/View/Fonts/#Dosis"/>
+            <Setter Property="Opacity" Value=".5"/>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="#FFF3A250"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="Opacity" Value="1"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="1"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="OnTransferStatusButtonTheme"
+           TargetType="RadioButton"
+           BasedOn="{StaticResource ParamsButtonTheme}">
+        <Setter Property="Content" Value="Transfer"/>
+        <Setter Property="Background" Value="#e1ffe2"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="#48ff9c"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ActiveStatusButtonTheme"
+           TargetType="RadioButton"
+           BasedOn="{StaticResource ParamsButtonTheme}">
+        <Setter Property="Content" Value="Active"/>
+        <Setter Property="Background" Value="#fffee2"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="#ffe428"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="BlockedStatusButtonTheme"
+           TargetType="RadioButton"
+           BasedOn="{StaticResource ParamsButtonTheme}">
+        <Setter Property="Content" Value="Blocked"/>
+        <Setter Property="Background" Value="#fde9e9"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="#ff8a8a"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="RetiredStatusButtonTheme"
+           TargetType="RadioButton"
+           BasedOn="{StaticResource ParamsButtonTheme}">
+        <Setter Property="Content" Value="Retired"/>
+        <Setter Property="Background" Value="#ececec"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="#8b8b8b"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PlayerPositionButtonTheme"
+           TargetType="RadioButton"
+           BasedOn="{StaticResource ParamsButtonTheme}">
+        <Setter Property="Content" Value="Retired"/>
+        <Setter Property="Background" Value="#ececec"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="#111111"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+           TargetType="RadioButton"
+           x:Key="SortPlayerBoard">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Background="{TemplateBinding Background}">
+
+                            <TextBlock Text="{TemplateBinding Property=Content}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Padding="0,5,0,5"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="#eaf5ff"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="#515151"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontFamily" Value="/View/Fonts/#Dosis"/>
+            <Setter Property="Opacity" Value=".5"/>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="#c3e0fa"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="Opacity" Value="1"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="1"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

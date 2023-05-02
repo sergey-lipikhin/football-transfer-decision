@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="Border"
+           x:Key="BorderPlayerBoardTheme">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="#BAEF3939"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Opacity" Value=".7"/>
+        <Setter Property="Margin" Value="4"/>
+    </Style>
+    
+</ResourceDictionary>

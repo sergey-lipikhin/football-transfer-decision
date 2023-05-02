@@ -1,0 +1,88 @@
+﻿<Window x:Class="TransferMarketApp.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TransferMarketApp"
+        xmlns:vm="clr-namespace:TransferMarketApp.ViewModels.WindowsVM"
+        mc:Ignorable="d"
+        Title="StartWindow"
+        x:Name="startWindow"
+        Height="250"
+        Width="519"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <vm:StartWindowVM/>
+    </Window.DataContext>
+
+    <Border BorderThickness="1"
+            MouseDown="Border_MouseDown"
+            BorderBrush="Black"
+            CornerRadius="15"
+            Background="AliceBlue">
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="11*"/>
+            </Grid.RowDefinitions>
+
+            <TextBox Grid.Row="1"
+                     Background="AliceBlue"
+                     Text=""/>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="14*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1"
+                        Style="{StaticResource ImageButtonTopPanel}"
+                        Command="{Binding ExitCommand}" Cursor="Hand">
+                    <Image Source="/View/Images/TopPanelIcons/close_window_32px.png"
+                           Width="17" Height="17"/>
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="1"
+                  Background="White">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="72*"/>
+                    <ColumnDefinition Width="317*"/>
+                    <ColumnDefinition Width="47*"/>
+                    <ColumnDefinition Width="72*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".6*"/>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height=".3*"/>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height=".6*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Column="1" Grid.Row="1"
+                        Height="45" Width="200"
+                        Content="Admin"
+                        Style="{StaticResource OrangeButtonTheme}"
+                        Command="{Binding AdminWindowCommand}"
+                        CommandParameter="{Binding ElementName=startWindow}">
+                </Button>
+
+                <Button Grid.Column="1" Grid.Row="3"
+                        Height="45" Width="200"
+                        Content="User"
+                        Style="{StaticResource BlueButtonTheme}"
+                        Command="{Binding UserWindowCommand}"
+                        CommandParameter="{Binding ElementName=startWindow}">
+                </Button>
+
+            </Grid>
+        </Grid>
+    </Border>
+
+</Window>

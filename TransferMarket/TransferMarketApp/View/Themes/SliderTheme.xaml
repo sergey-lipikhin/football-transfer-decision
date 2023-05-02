@@ -1,0 +1,83 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <!--шакала состоит из прямоугольников-->
+    <Style x:Key="SliderRectangleTheme" TargetType="Rectangle">
+        <Setter Property="Width" Value="1"/>
+        <Setter Property="Height" Value="1"/>
+    </Style>
+    <!--градиент для шкалы-->
+    <LinearGradientBrush x:Key="SliderBackGroundTheme" StartPoint="0,0" EndPoint="1,0" Opacity=".75">
+        <GradientStop Color="Red" Offset="0.0" />
+        <GradientStop Color="Yellow" Offset="0.5" />
+        <GradientStop Color="Green" Offset="1.0" />
+    </LinearGradientBrush>
+    <!--разделительные линии на шкале-->
+    <LinearGradientBrush x:Key="SliderScaleWhiteLinesTheme" EndPoint="0,0" StartPoint="0.1,0" SpreadMethod="Repeat">
+        <GradientStop Color="Transparent" Offset="0.5" />
+        <GradientStop Color="White" Offset="0.5" />
+        <GradientStop Color="White" Offset="0.55" />
+        <GradientStop Color="Transparent" Offset="0.55" />
+    </LinearGradientBrush>
+    <!--эффект глянца-->
+    <LinearGradientBrush x:Key="SliderGlossyEffectTheme" EndPoint="0,1" StartPoint="0,0" SpreadMethod="Repeat">
+        <GradientStop Color="#11FFFFFF" Offset="0" />
+        <GradientStop Color="#22FFFFFF" Offset="0.5" />
+        <GradientStop Color="#11000000" Offset="0.5" />
+        <GradientStop Color="#11000000" Offset="1" />
+    </LinearGradientBrush>
+
+    <Style x:Key="SliderThumb" TargetType="{x:Type Thumb}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Ellipse Height="12" Width="12" StrokeThickness=".5" Stroke="Black" Fill="#FF5B5F5B"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SliderScaleBorderTheme" TargetType="Border">
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <VisualBrush>
+                    <VisualBrush.Visual>
+                        <Grid>
+                            <Rectangle Style="{StaticResource SliderRectangleTheme}"
+                                       Fill="{StaticResource SliderBackGroundTheme}"/>
+                            <Rectangle Style="{StaticResource SliderRectangleTheme}"
+                                       Fill="{StaticResource SliderScaleWhiteLinesTheme}"/>
+                            <Rectangle Style="{StaticResource SliderRectangleTheme}"
+                                       Fill="{StaticResource SliderGlossyEffectTheme}"/>
+                        </Grid>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <ControlTemplate x:Key="SliderTemplate"  TargetType="Slider">
+        <Border Style="{StaticResource SliderScaleBorderTheme}">
+            <Grid>
+                <Track Grid.Row="1" x:Name="PART_Track">
+                    <Track.Thumb>
+                        <Thumb Style="{StaticResource SliderThumb}"/>
+                    </Track.Thumb>
+                </Track>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="Slider"
+           x:Key="PlayerRatingSliderTheme">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Width" Value="430"/>
+        <Setter Property="Maximum" Value="100"/>
+        <Setter Property="Minimum" Value="0"/>
+        <Setter Property="Template" Value="{StaticResource SliderTemplate}"/>
+    </Style>
+    
+</ResourceDictionary>

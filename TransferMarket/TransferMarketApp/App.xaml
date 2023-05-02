@@ -1,0 +1,27 @@
+﻿<Application x:Class="TransferMarketApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TransferMarketApp"
+             StartupUri="StartWindow.xaml"
+             ShutdownMode="OnLastWindowClose">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/View/Themes/Buttons/ImageButtonTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/Buttons/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/ScrollViewer/ScrollViewerTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/TextBlock/TableTextBlockTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/TextBlock/PlayerRatingTextBlockTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/ListBox/TableListBoxTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/BorderTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/TabTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/SliderTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/TextBoxTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/Buttons/UnCoverButtonTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/Buttons/TabButtonTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/Buttons/RadioButtonTheme.xaml"/>
+                <ResourceDictionary Source="/View/Themes/ComboBoxTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

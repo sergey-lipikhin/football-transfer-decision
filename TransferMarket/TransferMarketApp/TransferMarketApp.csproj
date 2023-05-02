@@ -1,0 +1,195 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Connected Services\PlayerService\**" />
+    <EmbeddedResource Remove="Connected Services\PlayerService\**" />
+    <None Remove="Connected Services\PlayerService\**" />
+    <Page Remove="Connected Services\PlayerService\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="View\Fonts\Dosis.ttf" />
+    <None Remove="View\Images\CountryIcons\argentina_96px.png" />
+    <None Remove="View\Images\CountryIcons\england_96px.png" />
+    <None Remove="View\Images\CountryIcons\france_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_algeria_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_argentina_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_armenia_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_australia_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_austria_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_azerbaijan_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_belarus_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_belgium_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_bolivia_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_bosnia_and_herzegovina_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_brazil_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_bulgaria_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_canada_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_chile_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_china_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_colombia_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_congo_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_croatia_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_czech_republic_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_denmark_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_ecuador_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_egypt_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_estonia_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_finland_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_germany_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_greece_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_hungary_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_image_96px_1.png" />
+    <None Remove="View\Images\CountryIcons\icons8_india_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_indonesia_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_iran_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_iraq_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_italy_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_ivory_coast_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_japan_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_kazakhstan_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_latvia_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_lithuania_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_mexico_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_netherlands_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_nigeria_flag_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_norway_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_peru_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_poland_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_portugal_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_romania_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_serbia_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_slovakia_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_south_africa_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_south_korea_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_spain_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_sweden_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_switzerland_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_tunisia_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_turkey_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_ukraine_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_united_arab_emirates_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_uruguay_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_usa_96px.png" />
+    <None Remove="View\Images\CountryIcons\icons8_venezuela_96px.png" />
+    <None Remove="View\Images\CountryIcons\russian_federation_96px.png" />
+    <None Remove="View\Images\foot_104px.png" />
+    <None Remove="View\Images\height_96px.png" />
+    <None Remove="View\Images\icons8_refresh_96px.png" />
+    <None Remove="View\Images\icons_soccer_ball_100px.png" />
+    <None Remove="View\Images\menu_50px.png" />
+    <None Remove="View\Images\scale_104px.png" />
+    <None Remove="View\Images\star_96px.png" />
+    <None Remove="View\Images\star_filled_96px.png" />
+    <None Remove="View\Images\TopPanelIcons\close_window_32px.png" />
+    <None Remove="View\Images\TopPanelIcons\screensharing_32px.png" />
+    <None Remove="View\Images\TopPanelIcons\subtract_32px.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Connected Services\PlayerService\Reference.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PropertyChanged.Fody" Version="3.4.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.7.*" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.7.*" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.7.*" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.7.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\Fonts\Dosis.ttf" />
+    <Resource Include="View\Images\CountryIcons\argentina_96px.png" />
+    <Resource Include="View\Images\CountryIcons\england_96px.png" />
+    <Resource Include="View\Images\CountryIcons\france_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_algeria_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_argentina_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_armenia_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_australia_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_austria_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_azerbaijan_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_belarus_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_belgium_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_bolivia_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_bosnia_and_herzegovina_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_brazil_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_bulgaria_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_canada_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_chile_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_china_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_colombia_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_congo_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_croatia_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_czech_republic_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_denmark_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_ecuador_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_egypt_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_estonia_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_finland_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_germany_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_greece_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_hungary_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_image_96px_1.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_india_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_indonesia_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_iran_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_iraq_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_italy_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_ivory_coast_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_japan_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_kazakhstan_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_latvia_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_lithuania_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_mexico_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_netherlands_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_nigeria_flag_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_norway_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_peru_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_poland_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_portugal_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_romania_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_serbia_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_slovakia_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_south_africa_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_south_korea_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_spain_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_sweden_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_switzerland_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_tunisia_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_turkey_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_ukraine_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_united_arab_emirates_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_uruguay_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_usa_96px.png" />
+    <Resource Include="View\Images\CountryIcons\icons8_venezuela_96px.png" />
+    <Resource Include="View\Images\CountryIcons\russian_federation_96px.png" />
+    <Resource Include="View\Images\foot_104px.png" />
+    <Resource Include="View\Images\height_96px.png" />
+    <Resource Include="View\Images\icons8_refresh_96px.png" />
+    <Resource Include="View\Images\icons_soccer_ball_100px.png" />
+    <Resource Include="View\Images\menu_50px.png" />
+    <Resource Include="View\Images\scale_104px.png" />
+    <Resource Include="View\Images\star_96px.png" />
+    <Resource Include="View\Images\star_filled_96px.png" />
+    <Resource Include="View\Images\TopPanelIcons\close_window_32px.png" />
+    <Resource Include="View\Images\TopPanelIcons\screensharing_32px.png" />
+    <Resource Include="View\Images\TopPanelIcons\subtract_32px.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="View\Themes\TextBox\" />
+  </ItemGroup>
+
+</Project>
